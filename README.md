@@ -67,6 +67,13 @@ Using powershell, connect to mongo:
 docker exec -it share-schedule-service_mongo_1 mongosh -u root -p example
 ```
 
+## Helpful commands
+Generate controller or service inside module named module1
+```bash
+nest g controller1 module1
+nest g service1 module1
+```
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
