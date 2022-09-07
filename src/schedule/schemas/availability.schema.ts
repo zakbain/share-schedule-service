@@ -9,10 +9,10 @@ export class Availability {
   spaceId: ObjectId;
 
   @Prop()
-  startTime: Date;
+  startsAt: Date;
 
   @Prop()
-  endTime: Date;
+  endsAt: Date;
 }
 
 export const AvailabilitySchema = SchemaFactory.createForClass(Availability);

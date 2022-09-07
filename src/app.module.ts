@@ -5,7 +5,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://root:example@mongo:27017'), ScheduleModule],
+  imports: [MongooseModule.forRoot('mongodb://root:example@localhost:27017',
+    { dbName: 'schedule' }), ScheduleModule],
   controllers: [AppController],
   providers: [AppService],
 })

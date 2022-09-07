@@ -2,6 +2,6 @@ import { ObjectId } from "mongoose";
 
 export class CreateAvailabilityDto {
   readonly spaceId: ObjectId;
-  readonly startTime: Date;
-  readonly endTime: Date;
+  readonly startsAt: Date;
+  readonly endsAt: Date;
 }

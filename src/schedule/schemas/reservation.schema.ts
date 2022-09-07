@@ -9,10 +9,10 @@ export class Reservation {
   spaceId: ObjectId;
 
   @Prop()
-  startTime: Date;
+  startsAt: Date;
 
   @Prop()
-  endTime: Date;
+  endsAt: Date;
 }
 
 export const ReservationSchema = SchemaFactory.createForClass(Reservation);
