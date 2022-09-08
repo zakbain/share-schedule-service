@@ -3,7 +3,7 @@ import { CreateAvailabilityDto } from '../dto/create-availability.dto';
 import { Availability } from '../schemas/availability.schema';
 import { AvailabilityService } from './availability.service';
 
-@Controller('availability')
+@Controller('availabilities')
 export class AvailabilityController {
   constructor(private readonly availabilityService: AvailabilityService) { }
 
