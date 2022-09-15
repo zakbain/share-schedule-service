@@ -1,0 +1,9 @@
+type Availability {
+  id: String
+  spaceId: String
+}
+
+type Query {
+  availability(id: Int!): Availability
+}
+
