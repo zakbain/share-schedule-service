@@ -6,12 +6,11 @@ import { AvailabilityService } from './availability/availability.service';
 import { ReservationController } from './reservation/reservation.controller';
 import { ReservationService } from './reservation/reservation.service';
 import { Reservation, ReservationSchema } from './schemas/reservation.schema';
-import { AvailabilityResolver } from './availability/availability.resolver';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: Availability.name, schema: AvailabilitySchema }]),
   MongooseModule.forFeature([{ name: Reservation.name, schema: ReservationSchema }])],
   controllers: [AvailabilityController, ReservationController],
-  providers: [AvailabilityService, AvailabilityResolver, ReservationService],
+  providers: [AvailabilityService, ReservationService],
 })
 export class ScheduleModule { }

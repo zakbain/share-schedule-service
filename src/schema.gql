@@ -1,0 +1,20 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Query {
+  space: Space!
+}
+
+type Space {
+  description: String
+  owner: User!
+  title: String
+}
+
+type User {
+  email: String
+  firstName: String
+  lastName: String
+  username: String
+}

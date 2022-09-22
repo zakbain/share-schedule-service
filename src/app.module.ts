@@ -14,8 +14,8 @@ import { SpaceModule } from './space/space.module';
     ScheduleModule,
   GraphQLModule.forRoot<ApolloDriverConfig>({
     driver: ApolloDriver,
-    typePaths: ['./**/*.graphql'],
-    autoSchemaFile: false,
+    autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+    sortSchema: true,
   }),
   UserModule,
   SpaceModule,],
