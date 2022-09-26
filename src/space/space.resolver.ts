@@ -1,7 +1,8 @@
-import { Args, ID, Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
+import { Args, ID, Mutation, Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
 import { ObjectId } from "mongoose";
 import { User } from "src/user/models/user.model";
 import { UserService } from "src/user/user.service";
+import { CreateSpaceInput } from "./dto/create-space.input";
 import { Space } from "./models/space.model";
 import { SpaceService } from "./space.service";
 
@@ -20,5 +21,10 @@ export class SpaceResolver {
   @ResolveField('owner', returns => User)
   async getUser(@Parent() space: Space) {
     return await this.userService.find(space.id);
+  }
+
+  @Mutation(returns => Space) 
+  async createSpace(@Args('createSpaceData') createSpaceData: CreateSpaceInput) {
+    return await this.spaceService.create(createSpaceData);
   }
 }

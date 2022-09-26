@@ -2,6 +2,16 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+input CreateSpaceInput {
+  description: String!
+  owner: ID!
+  title: String!
+}
+
+type Mutation {
+  createSpace(createSpaceData: CreateSpaceInput!): Space!
+}
+
 type Query {
   space(id: ID!): Space!
 }
