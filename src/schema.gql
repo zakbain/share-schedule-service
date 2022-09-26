@@ -3,11 +3,12 @@
 # ------------------------------------------------------
 
 type Query {
-  space: Space!
+  space(id: ID!): Space!
 }
 
 type Space {
   description: String
+  id: ID!
   owner: User!
   title: String
 }
@@ -15,6 +16,7 @@ type Space {
 type User {
   email: String
   firstName: String
+  id: ID!
   lastName: String
   username: String
 }
