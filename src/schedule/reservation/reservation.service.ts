@@ -14,6 +14,6 @@ export class ReservationService {
   }
 
   async findAll(): Promise<Reservation[]> {
-    return this.ReservationModel.find().exec();
+    return await this.ReservationModel.find().exec();
   }
 }

@@ -14,10 +14,10 @@ export class SpaceService {
   }
 
   async find(id: ObjectId): Promise<Space> {
-    return this.SpaceModel.findOne({ _id: id }).exec();
+    return await this.SpaceModel.findOne({ _id: id }).exec();
   }
   
   async findAll(): Promise<Space[]> {
-    return this.SpaceModel.find().exec();
+    return await this.SpaceModel.find().exec();
   }
 }
