@@ -15,7 +15,7 @@ export class SpaceResolver {
 
   @Query(returns => Space, { name: 'space' })
   async getSpace(@Args('id', { type: () => ID }) id: ObjectId) {
-    return ( await this.spaceService.find(id));
+    return (await this.spaceService.find(id));
   }
 
   @ResolveField('owner', returns => User)
@@ -23,7 +23,7 @@ export class SpaceResolver {
     return await this.userService.find(space.id);
   }
 
-  @Mutation(returns => Space) 
+  @Mutation(returns => Space)
   async createSpace(@Args('createSpaceData') createSpaceData: CreateSpaceInput) {
     return await this.spaceService.create(createSpaceData);
   }
