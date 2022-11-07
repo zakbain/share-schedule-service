@@ -2,11 +2,22 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Availability {
+  endsAt: DateTime
+  space: Space!
+  startsAt: DateTime
+}
+
 input CreateSpaceInput {
   description: String!
   owner: ID!
   title: String!
 }
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
 
 type Mutation {
   createSpace(createSpaceData: CreateSpaceInput!): Space!
@@ -17,6 +28,7 @@ type Query {
 }
 
 type Space {
+  availabilities: [Availability!]!
   description: String
   id: ID!
   owner: User!
