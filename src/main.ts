@@ -12,8 +12,9 @@ async function bootstrap() {
     .addTag('schedule')
     .build();
   const document = SwaggerModule.createDocument(app, config);
+  app.enableCors();
   SwaggerModule.setup('api', app, document);
 
-  await app.listen(3000);
+  await app.listen(3001);
 }
 bootstrap();
